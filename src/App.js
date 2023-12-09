@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import { useEffect } from "react";
 import { useStateValue } from "./StateProvider";
+import Payment from "./pages/Payment";
 
 export default function App() {
   const [{}, dispatch] = useStateValue();
@@ -31,6 +32,7 @@ export default function App() {
       }
     });
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -40,6 +42,7 @@ export default function App() {
           {/* login should not display header */}
           <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </div>
     </BrowserRouter>

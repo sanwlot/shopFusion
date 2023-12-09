@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         (cartItem) => cartItem.id === action.id
       );
 
-      // copy the cart arrat to 'newCart'
+      // copy the cart array to 'newCart'
       let newCart = [...state.cart];
 
       // if index found then delete that item
