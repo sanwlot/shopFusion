@@ -17,6 +17,11 @@ export default function Product({ id, title, price, image, rating }) {
       },
     });
   };
+
+  const ratings = Array(rating)
+    .fill()
+    .map(() => <p key={Math.random()}>⭐️</p>);
+
   return (
     <div className="product">
       <div className="product__info">
@@ -25,13 +30,7 @@ export default function Product({ id, title, price, image, rating }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product__rating">
-          {Array(rating)
-            .fill()
-            .map(() => (
-              <p key={Math.random()}>⭐️</p>
-            ))}
-        </div>
+        <div className="product__rating">{ratings}</div>
       </div>
 
       <img src={image} alt="product" />

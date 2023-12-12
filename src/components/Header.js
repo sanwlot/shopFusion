@@ -8,6 +8,7 @@ import { getAuth, signOut } from "firebase/auth";
 export default function Header() {
   const [{ cart, user }, dispatch] = useStateValue();
 
+  // sign out logic
   const handleAuthentication = () => {
     const auth = getAuth();
     if (user) {
@@ -22,11 +23,18 @@ export default function Header() {
     console.log(user);
   };
 
+  // parsing username from their email if logged in
   let username = user?.email.split("@")[0];
-
+  // capitalizing their username if logged in
   if (user) {
     username = username.charAt(0).toUpperCase() + username.slice(1);
   }
+
+  //if user is not logged in then set it to Guest, else their username
+  let displayName = user ? username : "Guest";
+
+  // user sign-in status
+  let signInStatus = user ? "Sign Out" : "Sign In";
 
   return (
     <div className="header">
@@ -46,12 +54,8 @@ export default function Header() {
       <div className="header__nav">
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
-            <span className="header__option-line-one">
-              Hello {user ? username : "Guest"}
-            </span>
-            <span className="header__option-line-two">
-              {user ? "Sign Out" : "Sign In"}
-            </span>
+            <span className="header__option-line-one">Hello {displayName}</span>
+            <span className="header__option-line-two">{signInStatus}</span>
           </div>
         </Link>
 
