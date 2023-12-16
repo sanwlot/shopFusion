@@ -9,6 +9,13 @@ import { useEffect } from "react";
 import { useStateValue } from "./StateProvider";
 import Payment from "./pages/Payment";
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51ONpPlSF7FnDkPDAMuJcf4kovoFMavBLv2OiWqqHqUixnaydE1Uov4IKWbAfj2dP0qfiJNdFN2HS2w8KVlmWPrlQ00kW0HOjxY"
+);
+
 export default function App() {
   const [{}, dispatch] = useStateValue();
 
@@ -42,7 +49,15 @@ export default function App() {
           {/* login should not display header */}
           <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route
+            path="/payment"
+            element={
+              // i didnt use optional "option" attribute
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

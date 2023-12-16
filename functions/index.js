@@ -1,13 +1,9 @@
 const { onRequest } = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
-
 const express = require("express");
 const cors = require("cors");
 const stripe = require("stripe")(
   "sk_test_51ONpPlSF7FnDkPDAqpnQKBGq0B2U80dM6w0cZ0fAizfAipxVhX0Af49Vefrd3xtegWj14cjMDhU8G6cAtzzr1yzG00PDsGzXqy"
 );
-
-// API
 
 // App config
 const app = express();
@@ -24,9 +20,9 @@ app.post("/payments/create", async (req, res) => {
 
   console.log("Payment request received!!! ", total);
 
-  const paymentIntent = await stripe.paymentIntent.create({
-    amout: total, // subunits of the currency
-    currency: "usd",
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: parseFloat(total), // subunits of the currency
+    currency: "inr",
   });
 
   // OK - created
@@ -34,5 +30,6 @@ app.post("/payments/create", async (req, res) => {
     clientSecret: paymentIntent.client_secret,
   });
 });
+
 // Listen command
 exports.api = onRequest(app);
