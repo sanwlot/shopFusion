@@ -3,9 +3,6 @@ export const initialState = {
   user: null,
 };
 
-export const getCartTotal = (cart) =>
-  cart?.reduce((acc, cur) => cur.price + acc, 0);
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -28,7 +25,7 @@ const reducer = (state, action) => {
         newCart.splice(index, 1);
       } else {
         console.warn(
-          `Can't remove the product (id: ${action.id}) as it's not in the basket!`
+          `Can't remove the product (id: ${action.id}) as it's not in the cart!`
         );
       }
 
@@ -47,5 +44,8 @@ const reducer = (state, action) => {
       return state;
   }
 };
+
+export const getCartTotal = (cart) =>
+  cart?.reduce((accumulator, currentVal) => currentVal.price + accumulator, 0);
 
 export default reducer;

@@ -1,24 +1,26 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import "./App.css";
-import Checkout from "./pages/Checkout";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
 import { useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import Payment from "./pages/Payment";
-
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Checkout from "./pages/Checkout";
+import Payment from "./pages/Payment";
+import "./App.css";
 
+// Loading Stripe with publishable key
 const stripePromise = loadStripe(
   "pk_test_51ONpPlSF7FnDkPDAMuJcf4kovoFMavBLv2OiWqqHqUixnaydE1Uov4IKWbAfj2dP0qfiJNdFN2HS2w8KVlmWPrlQ00kW0HOjxY"
 );
 
 export default function App() {
+  // React Context API, here using dispatch for adding values to the state
   const [{}, dispatch] = useStateValue();
 
+  // Authentication for user login status
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -52,7 +54,7 @@ export default function App() {
           <Route
             path="/payment"
             element={
-              // i didnt use optional "option" attribute
+              // I didn't use the optional "option" attribute
               <Elements stripe={stripePromise}>
                 <Payment />
               </Elements>
