@@ -1,7 +1,14 @@
 import "./CheckoutProduct.css";
 import { useStateValue } from "../StateProvider";
 
-export default function CheckoutProduct({ id, title, price, image, rating }) {
+export default function CheckoutProduct({
+  id,
+  title,
+  price,
+  image,
+  rating,
+  hideButton,
+}) {
   const [{ cart }, dispatch] = useStateValue();
   const removeFromCart = () => {
     dispatch({
@@ -30,7 +37,9 @@ export default function CheckoutProduct({ id, title, price, image, rating }) {
               <p key={Math.random()}>⭐️</p>
             ))}
         </div>
-        <button onClick={removeFromCart}>Remove from cart</button>
+        {!hideButton && (
+          <button onClick={removeFromCart}>Remove from cart</button>
+        )}
       </div>
     </div>
   );

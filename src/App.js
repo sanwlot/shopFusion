@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
 import "./App.css";
 
 // Loading Stripe with publishable key
@@ -24,7 +25,7 @@ export default function App() {
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      console.log("user is >>>>", user);
+      // console.log("user is >>>>", user);
 
       if (user) {
         // User is signed in
@@ -60,6 +61,7 @@ export default function App() {
               </Elements>
             }
           />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </BrowserRouter>

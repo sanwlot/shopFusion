@@ -3,11 +3,11 @@ import "./Payment.css";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { Link, useNavigate } from "react-router-dom";
-
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import { func } from "prop-types";
 import { getCartTotal } from "../reducer";
 import axios from "../axios";
+import { db } from "../firebase";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 
 export default function Payment() {
   const stripe = useStripe();
@@ -23,7 +23,8 @@ export default function Payment() {
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
 
-  console.log("THE SECRET IS >>> ", clientSecret);
+  // console.log("THE SECRET IS >>> ", clientSecret);
+  // console.log("user --->", user.uid);
 
   useEffect(() => {
     // generate the special stripe secret which allows us to charge a customer
@@ -53,9 +54,41 @@ export default function Payment() {
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
 
+        // pushing purchase details to firestore
+        const userDocId = user?.uid;
+        const orderId = paymentIntent.id;
+
+        if (userDocId && orderId) {
+          const usersCollection = collection(db, "users");
+          const userDocRef = doc(usersCollection, userDocId);
+
+          const userOrdersCollection = collection(userDocRef, "orders");
+          const orderDocRef = doc(userOrdersCollection, orderId);
+
+          const orderData = {
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          };
+
+          setDoc(orderDocRef, orderData)
+            .then(() => {
+              console.log("Order document written successfully!");
+            })
+            .catch((error) => {
+              console.error("Error writing order document: ", error);
+            });
+        } else {
+          console.error("User ID or Order ID is undefined.");
+        }
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_CART",
+        });
 
         navigate("/orders", { replace: true });
       });
