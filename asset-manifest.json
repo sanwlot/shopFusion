@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sanwlot/amazon-clone-react/static/css/main.a6a9ed3d.css",
-    "main.js": "/sanwlot/amazon-clone-react/static/js/main.5f016548.js",
-    "index.html": "/sanwlot/amazon-clone-react/index.html",
-    "main.a6a9ed3d.css.map": "/sanwlot/amazon-clone-react/static/css/main.a6a9ed3d.css.map",
-    "main.5f016548.js.map": "/sanwlot/amazon-clone-react/static/js/main.5f016548.js.map"
+    "main.css": "/amazon-clone-react/static/css/main.a6a9ed3d.css",
+    "main.js": "/amazon-clone-react/static/js/main.2780a258.js",
+    "index.html": "/amazon-clone-react/index.html",
+    "main.a6a9ed3d.css.map": "/amazon-clone-react/static/css/main.a6a9ed3d.css.map",
+    "main.2780a258.js.map": "/amazon-clone-react/static/js/main.2780a258.js.map"
   },
   "entrypoints": [
     "static/css/main.a6a9ed3d.css",
-    "static/js/main.5f016548.js"
+    "static/js/main.2780a258.js"
   ]
 }
