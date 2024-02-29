@@ -8,6 +8,7 @@ import { getCartTotal } from "../reducer";
 import axios from "../axios";
 import { db } from "../firebase";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Payment() {
   const stripe = useStripe();
@@ -116,9 +117,11 @@ export default function Payment() {
             <h3>Delivery Address</h3>
           </div>
           <div className="payment__address">
-            <p>{user?.email}</p>
-            <p>3-K-23 CHB Owl City</p>
-            <p>Sanandreas, USA</p>
+            <p>
+              <strong>Email:</strong>
+              {user?.email}
+            </p>
+            <textarea placeholder="Enter complete delivery address here..." />
           </div>
         </div>
 
@@ -130,6 +133,7 @@ export default function Payment() {
           <div className="payment__items">
             {cart.map((item) => (
               <CheckoutProduct
+                key={uuidv4()}
                 id={item.id}
                 title={item.title}
                 image={item.image}
