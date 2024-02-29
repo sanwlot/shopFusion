@@ -30,3 +30,31 @@
 .payment__details {
   flex: 0.8;
 }
+
+.payment__details {
+  background-color: rgba(0, 0, 0, 0.048);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.address-form {
+  margin-top: 40px;
+  width: 70%;
+}
+
+.address-form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.207);
+  font-size: 18px;
+}
+
+.payment--order-total {
+  margin-top: 20px;
+}
+
+.payment--buy-now-btn {
+  margin-top: 25px;
+}

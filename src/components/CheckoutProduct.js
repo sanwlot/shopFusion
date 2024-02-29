@@ -31,7 +31,7 @@ export default function CheckoutProduct({
           <strong>{price}</strong>
         </p>
         <div className="product__rating">
-          {Array(rating)
+          {Array(Math.floor(rating))
             .fill()
             .map(() => (
               <p key={Math.random()}>⭐️</p>

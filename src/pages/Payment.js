@@ -118,10 +118,26 @@ export default function Payment() {
           </div>
           <div className="payment__address">
             <p>
-              <strong>Email:</strong>
-              {user?.email}
+              <strong>{user?.email}</strong>
             </p>
-            <textarea placeholder="Enter complete delivery address here..." />
+            <div className="address-form">
+              <p>Full Name(First and Last name)</p>
+              <input type="text" />
+              <p>Mobile number</p>
+              <input type="text" />
+              <p>Pincode</p>
+              <input type="text" />
+              <p>Flat, House no., Building, Company, Apartment</p>
+              <input type="text" />
+              <p>Landmark</p>
+              <input type="text" />
+              <p>Flat, House no., Building, Company, Apartment</p>
+              <input type="text" />
+              <p>Town/City</p>
+              <input type="text" />
+              <p>State</p>
+              <input type="text" />
+            </div>
           </div>
         </div>
 
@@ -154,12 +170,15 @@ export default function Payment() {
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div>
-                <div>
+                <div className="payment--order-total">
                   <strong>
                     Order Total({cart.length} items): {price}
                   </strong>
                 </div>
-                <button disabled={processing || disabled || succeeded}>
+                <button
+                  disabled={processing || disabled || succeeded}
+                  className="payment--buy-now-btn"
+                >
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

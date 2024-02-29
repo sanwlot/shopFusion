@@ -18,7 +18,7 @@ export default function Product({ id, title, price, image, rating }) {
     });
   };
 
-  const ratings = Array(rating)
+  const ratings = Array(Math.floor(rating))
     .fill()
     .map(() => <p key={Math.random()}>⭐️</p>);
 

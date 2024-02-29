@@ -1,25 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Product from "../components/Product";
+import { v4 as uuidv4 } from "uuid";
+import banner from "../Images/banner.jpg";
 
 // Products are hard coded for now, need to add a data structure of products
 export default function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products));
+  }, []);
+
+  const moreProductsEl = products.map((product) => {
+    return (
+      <Product
+        key={uuidv4()}
+        id={product.id}
+        title={product.description}
+        price={product.price}
+        rating={product.rating}
+        image={product.images[0]}
+      />
+    );
+  });
+
   return (
     <div className="home">
       <div className="home__container">
-        <img
-          className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt="banner"
-        />
+        <img className="home__image" src={banner} alt="banner" />
 
         <div className="home__row">
           <Product
             id="12321341"
-            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
-            price={11.96}
+            title="ASUS Dual GeForce RTX™ 4070 OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, 0dB Technology)"
+            price={699}
             rating={5}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+            image="https://m.media-amazon.com/images/I/61eVx7oQ1OL._SX679_.jpg"
           />
           <Product
             id="49538094"
@@ -63,6 +82,7 @@ export default function Home() {
             image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
           />
         </div>
+        <div className="more-products-grid">{moreProductsEl}</div>
       </div>
     </div>
   );
