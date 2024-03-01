@@ -4,13 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import Payment from "./pages/Payment";
 import Orders from "./pages/Orders";
-import "./App.css";
+import Layout from "./components/Layout";
 
 // Loading Stripe with publishable key
 const stripePromise = loadStripe(
@@ -45,25 +44,22 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Routes>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          {/* login should not display header */}
-          <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/payment"
             element={
-              // I didn't use the optional "option" attribute
               <Elements stripe={stripePromise}>
                 <Payment />
               </Elements>
             }
           />
           <Route path="/orders" element={<Orders />} />
-        </Routes>
-      </div>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
