@@ -4,6 +4,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { useStateValue } from "../StateProvider";
 import Order from "../components/Order";
 import "./Orders.css";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Orders() {
   const [{ user }, dispatch] = useStateValue();
@@ -27,9 +28,12 @@ export default function Orders() {
             id: doc.id,
             ...doc.data(),
           }));
-          console.log(`Order history of ${user.email}: ${ordersData}`);
-          console.log(ordersData);
-          setOrders(ordersData);
+          // using to toSorted instead of sort for avoiding mutation of the original array
+          const sortedOrders = ordersData.toSorted(
+            (a, b) => b.created - a.created
+          );
+          console.log(`Order history of ${user.email}`);
+          setOrders(sortedOrders);
         } catch (error) {
           console.error("Error fetching orders: ", error);
         }
@@ -47,7 +51,7 @@ export default function Orders() {
       <h1>Your Orders</h1>
       <div className="orders__order">
         {orders?.map((order) => (
-          <Order order={order} />
+          <Order key={uuidv4()} order={order} />
         ))}
       </div>
     </div>

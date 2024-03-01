@@ -17,8 +17,6 @@ export default function Order({ order }) {
     );
   });
 
-  console.log(`order: `);
-  console.log(order);
   return (
     <div className="order">
       <h2>Order</h2>

@@ -19,7 +19,7 @@ export default function Home() {
       <Product
         key={uuidv4()}
         id={product.id}
-        title={product.description}
+        title={product.title}
         price={product.price}
         rating={product.rating}
         image={product.images[0]}
