@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { useStateValue } from "./StateProvider";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
@@ -12,6 +12,8 @@ import Orders from "./pages/Orders";
 import Layout from "./components/Layout";
 
 // Loading Stripe with publishable key
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
   "pk_test_51ONpPlSF7FnDkPDAMuJcf4kovoFMavBLv2OiWqqHqUixnaydE1Uov4IKWbAfj2dP0qfiJNdFN2HS2w8KVlmWPrlQ00kW0HOjxY"
 );
@@ -24,8 +26,6 @@ export default function App() {
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      // console.log("user is >>>>", user);
-
       if (user) {
         // User is signed in
         dispatch({
@@ -42,6 +42,9 @@ export default function App() {
     });
   }, []);
 
+  // a state variable for tracking what user types in the product search input in the home page
+  // variable is used by <Home /> component
+  // setter function is used by <Header /> component, which is inside <Layout />
   const [userInputProduct, setUserInputProduct] = useState("");
 
   return (

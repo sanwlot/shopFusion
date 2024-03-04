@@ -1,15 +1,15 @@
-import "./Header.css";
-import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
-import { useStateValue } from "../StateProvider";
 import { getAuth, signOut } from "firebase/auth";
+import { useStateValue } from "../StateProvider";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SearchIcon from "@mui/icons-material/Search";
+import "./Header.css";
 
 export default function Header({ setUserInputProduct }) {
   const [{ cart, user }, dispatch] = useStateValue();
 
   // sign out logic
-  const handleAuthentication = () => {
+  const handleSignOut = () => {
     const auth = getAuth();
     if (user) {
       signOut(auth)
@@ -20,12 +20,12 @@ export default function Header({ setUserInputProduct }) {
           alert(error);
         });
     }
-    console.log(user);
   };
 
-  // parsing username from their email if logged in
+  // parsing username from their email if they're logged in
   let username = user?.email.split("@")[0];
-  // capitalizing their username if logged in
+
+  // capitalizing their username if they're logged in
   if (user) {
     username = username.charAt(0).toUpperCase() + username.slice(1);
   }
@@ -57,7 +57,7 @@ export default function Header({ setUserInputProduct }) {
 
       <div className="header__nav">
         <Link to={!user && "/login"}>
-          <div onClick={handleAuthentication} className="header__option">
+          <div onClick={handleSignOut} className="header__option">
             <span className="header__option-line-one">Hello {displayName}</span>
             <span className="header__option-line-two">{signInStatus}</span>
           </div>

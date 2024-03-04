@@ -11,6 +11,9 @@ export default function ImageSlider({ imageUrls }) {
         return prevImageIndex + 1;
       });
     }, 5000);
+
+    // useEffect provides a way to cleanup any side-effect
+    // by providing callback function as "return" value that cleans the side effect
     return () => clearInterval(intervalId);
   });
 

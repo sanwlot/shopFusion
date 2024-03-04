@@ -1,11 +1,11 @@
-import "../firebase";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import "../firebase";
 import "./Login.css";
 
 export default function Login() {
@@ -19,8 +19,6 @@ export default function Login() {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // It successfully signed-in with given email and password
-        console.log(userCredential.user);
         if (userCredential) {
           // navigate to homepage after successful sign in
           navigate("/");
@@ -34,8 +32,6 @@ export default function Login() {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // It successfully created an user with given email and password
-        console.log(userCredential.user);
         if (userCredential) {
           // navigate to homepage after successful registration
           navigate("/");

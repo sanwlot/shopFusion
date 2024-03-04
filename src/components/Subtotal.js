@@ -1,7 +1,7 @@
-import { useStateValue } from "../StateProvider";
-import "./Subtotal.css";
-import { getCartTotal } from "../reducer";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import { getCartTotal } from "../reducer";
+import "./Subtotal.css";
 
 export default function Subtotal() {
   const [{ cart }, dispatch] = useStateValue();

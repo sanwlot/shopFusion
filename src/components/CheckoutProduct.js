@@ -1,5 +1,6 @@
-import "./CheckoutProduct.css";
 import { useStateValue } from "../StateProvider";
+import { v4 as uuidv4 } from "uuid";
+import "./CheckoutProduct.css";
 
 export default function CheckoutProduct({
   id,
@@ -34,7 +35,7 @@ export default function CheckoutProduct({
           {Array(Math.floor(rating))
             .fill()
             .map(() => (
-              <p key={Math.random()}>⭐️</p>
+              <p key={uuidv4()}>⭐️</p>
             ))}
         </div>
         {!hideButton && (

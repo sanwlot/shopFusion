@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Payment.css";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +8,7 @@ import axios from "../axios";
 import { db } from "../firebase";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
+import "./Payment.css";
 
 export default function Payment() {
   const stripe = useStripe();
@@ -130,8 +130,6 @@ export default function Payment() {
               <p>Flat, House no., Building, Company, Apartment</p>
               <input type="text" />
               <p>Landmark</p>
-              <input type="text" />
-              <p>Flat, House no., Building, Company, Apartment</p>
               <input type="text" />
               <p>Town/City</p>
               <input type="text" />

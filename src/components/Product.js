@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import "./Product.css";
 import { useStateValue } from "../StateProvider";
 
@@ -18,9 +19,9 @@ export default function Product({ id, title, price, image, rating }) {
     });
   };
 
-  const ratings = Array(Math.floor(rating))
+  const ratings = Array(Math.ceil(rating))
     .fill()
-    .map(() => <p key={Math.random()}>⭐️</p>);
+    .map(() => <p key={uuidv4()}>⭐️</p>);
 
   return (
     <div className="product">
