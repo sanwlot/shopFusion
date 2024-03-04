@@ -36,7 +36,9 @@ export default function Product({ id, title, price, image, rating }) {
 
       <img src={image} alt="product" />
 
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToCart} className="hoverEffect">
+        Add to cart
+      </button>
     </div>
   );
 }

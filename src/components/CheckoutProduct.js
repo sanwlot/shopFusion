@@ -39,7 +39,9 @@ export default function CheckoutProduct({
             ))}
         </div>
         {!hideButton && (
-          <button onClick={removeFromCart}>Remove from cart</button>
+          <button onClick={removeFromCart} className="hoverEffect">
+            Remove from cart
+          </button>
         )}
       </div>
     </div>

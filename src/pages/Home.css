@@ -40,3 +40,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+.hoverEffect {
+  transition: background-color 100ms ease-in-out;
+}
+
+.hoverEffect:hover {
+  background-color: #ff9900;
+}
