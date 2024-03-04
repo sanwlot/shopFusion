@@ -5,6 +5,7 @@ import { useStateValue } from "../StateProvider";
 import Order from "../components/Order";
 import "./Orders.css";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 
 export default function Orders() {
   const [{ user }, dispatch] = useStateValue();
@@ -48,7 +49,14 @@ export default function Orders() {
 
   return (
     <div className="orders">
-      <h1>Your Orders</h1>
+      {orders.length === 0 ? (
+        <h1>
+          You haven't ordered anything yet, {<Link to="/">click here</Link>} to
+          shop!
+        </h1>
+      ) : (
+        <h1>Your Orders</h1>
+      )}
       <div className="orders__order">
         {orders?.map((order) => (
           <Order key={uuidv4()} order={order} />

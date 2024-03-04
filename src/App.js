@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -42,12 +42,17 @@ export default function App() {
     });
   }, []);
 
+  const [userInputProduct, setUserInputProduct] = useState("");
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+        <Route element={<Layout setUserInputProduct={setUserInputProduct} />}>
+          <Route
+            path="/"
+            element={<Home userInputProduct={userInputProduct} />}
+          />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/payment"

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { getAuth, signOut } from "firebase/auth";
 
-export default function Header() {
+export default function Header({ setUserInputProduct }) {
   const [{ cart, user }, dispatch] = useStateValue();
 
   // sign out logic
@@ -47,7 +47,11 @@ export default function Header() {
       </Link>
 
       <div className="header__search">
-        <input className="header__search-input" type="text" />
+        <input
+          className="header__search-input"
+          type="text"
+          onChange={(e) => setUserInputProduct(e.target.value)}
+        />
         <SearchIcon className="header__search-icon" />
       </div>
 
@@ -59,27 +63,31 @@ export default function Header() {
           </div>
         </Link>
 
-        <Link to="/orders">
-          <div className="header__option">
-            <span className="header__option-line-one">Returns</span>
-            <span className="header__option-line-two">& Orders</span>
-          </div>
-        </Link>
+        {user && (
+          <Link to="/orders">
+            <div className="header__option">
+              <span className="header__option-line-one">Returns</span>
+              <span className="header__option-line-two">& Orders</span>
+            </div>
+          </Link>
+        )}
 
-        <div className="header__option">
+        {/* <div className="header__option">
           <span className="header__option-line-one">Your</span>
           <span className="header__option-line-two">Prime</span>
-        </div>
+        </div> */}
       </div>
 
-      <Link to="/checkout">
-        <div className="header__option-cart">
-          <ShoppingCartIcon className="header__option-cart-icon" />
-          <span className="header__option-line-two header__cart-count">
-            {cart?.length}
-          </span>
-        </div>
-      </Link>
+      {user && cart.length > 0 && (
+        <Link to="/checkout">
+          <div className="header__option-cart">
+            <ShoppingCartIcon className="header__option-cart-icon" />
+            <span className="header__option-line-two header__cart-count">
+              {cart?.length}
+            </span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }
