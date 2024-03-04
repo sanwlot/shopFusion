@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Product from "../components/Product";
 import { v4 as uuidv4 } from "uuid";
-import banner from "../Images/banner.jpg";
+import Carousel from "../components/Carousel";
+// import banner from "../Images/banner.jpg";
 
-// Products are hard coded for now, need to add a data structure of products
 export default function Home() {
   const [products, setProducts] = useState([]);
 
@@ -30,8 +30,8 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home__container">
-        <img className="home__image" src={banner} alt="banner" />
-
+        {/* <img className="home__image" src={banner} alt="banner" /> */}
+        <Carousel />
         <div className="home__row">
           <Product
             id="12321341"
