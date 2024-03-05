@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/amazon-clone-react/static/css/main.a6a9ed3d.css",
-    "main.js": "/amazon-clone-react/static/js/main.2780a258.js",
+    "main.css": "/amazon-clone-react/static/css/main.cee63b5e.css",
+    "main.js": "/amazon-clone-react/static/js/main.c9e89ef5.js",
+    "static/media/b2.jpg": "/amazon-clone-react/static/media/b2.b584de21cd671e900cf7.jpg",
+    "static/media/b3.jpg": "/amazon-clone-react/static/media/b3.805821d23a3f63566f17.jpg",
+    "static/media/b1.jpg": "/amazon-clone-react/static/media/b1.c72978f16d0714024e40.jpg",
+    "static/media/b6.jpg": "/amazon-clone-react/static/media/b6.37e38a1c83060cf8ec40.jpg",
+    "static/media/b5.jpg": "/amazon-clone-react/static/media/b5.ca4e058bec81989c0efc.jpg",
+    "static/media/b4.jpg": "/amazon-clone-react/static/media/b4.7f4a5ddb4ca2c826301e.jpg",
     "index.html": "/amazon-clone-react/index.html",
-    "main.a6a9ed3d.css.map": "/amazon-clone-react/static/css/main.a6a9ed3d.css.map",
-    "main.2780a258.js.map": "/amazon-clone-react/static/js/main.2780a258.js.map"
+    "main.cee63b5e.css.map": "/amazon-clone-react/static/css/main.cee63b5e.css.map",
+    "main.c9e89ef5.js.map": "/amazon-clone-react/static/js/main.c9e89ef5.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6a9ed3d.css",
-    "static/js/main.2780a258.js"
+    "static/css/main.cee63b5e.css",
+    "static/js/main.c9e89ef5.js"
   ]
 }
