@@ -5,7 +5,7 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Checkout() {
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ cart, user }] = useStateValue();
 
   const CheckoutProducts = cart.map((item) => {
     return (
@@ -23,12 +23,6 @@ export default function Checkout() {
   return (
     <div className="checkout">
       <div className="checkout__left">
-        {/* <img
-          className="checkout__ad"
-          src="https://www.webfx.com/wp-content/uploads/2021/10/amazon-ad-network.png"
-          alt="advertisement"
-        /> */}
-
         <div style={{ padding: "2em" }}>
           <h3 style={{ marginLeft: "0.5em" }}>
             Hello {user?.email.split("@")[0].toUpperCase()}

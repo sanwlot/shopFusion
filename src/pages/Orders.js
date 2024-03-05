@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
+import { collection, query, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { db } from "../firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
 import { useStateValue } from "../StateProvider";
 import Order from "../components/Order";
 import "./Orders.css";
-import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
 
 export default function Orders() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {

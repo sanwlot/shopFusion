@@ -4,7 +4,7 @@ import { getCartTotal } from "../reducer";
 import "./Subtotal.css";
 
 export default function Subtotal() {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart }] = useStateValue();
   const navigate = useNavigate();
 
   const price = getCartTotal(cart) > 0 ? `$${getCartTotal(cart)}` : 0;

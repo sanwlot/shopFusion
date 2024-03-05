@@ -6,7 +6,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { getCartTotal } from "../reducer";
 import axios from "../axios";
 import { db } from "../firebase";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import "./Payment.css";
 
@@ -23,9 +23,6 @@ export default function Payment() {
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
-
-  // console.log("THE SECRET IS >>> ", clientSecret);
-  // console.log("user --->", user.uid);
 
   useEffect(() => {
     // generate the special stripe secret which allows us to charge a customer
@@ -46,7 +43,7 @@ export default function Payment() {
     e.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe
+    await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
@@ -96,7 +93,6 @@ export default function Payment() {
   }
 
   function handleChange(e) {
-    // handle change
     setDisabled(e.empty);
     setError(e.error ? e.error.message : "");
   }
@@ -164,7 +160,6 @@ export default function Payment() {
             <h3>Payment Method</h3>
           </div>
           <div className="payment__details">
-            {/* STRIPE MAGIC!!! */}
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div>

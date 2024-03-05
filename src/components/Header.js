@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 
 export default function Header({ setUserInputProduct }) {
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ cart, user }] = useStateValue();
 
   // sign out logic
   const handleSignOut = () => {
@@ -72,10 +72,10 @@ export default function Header({ setUserInputProduct }) {
           </Link>
         )}
 
-        {/* <div className="header__option">
+        <div className="header__option">
           <span className="header__option-line-one">Your</span>
           <span className="header__option-line-two">Prime</span>
-        </div> */}
+        </div>
       </div>
 
       {user && cart.length > 0 && (

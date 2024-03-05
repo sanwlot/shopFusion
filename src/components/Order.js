@@ -1,6 +1,6 @@
 import moment from "moment";
-import "./Order.css";
 import CheckoutProduct from "./CheckoutProduct";
+import "./Order.css";
 
 export default function Order({ order }) {
   const CheckoutProducts = order.cart.map((item) => {

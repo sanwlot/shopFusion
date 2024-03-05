@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Product from "../components/Product";
 import Carousel from "../components/Carousel";
 import "./Home.css";
