@@ -11,7 +11,7 @@ const reducer = (state, action) => {
         cart: [...state.cart, action.item],
       };
 
-    case "REMOVE_FROM_CART":
+    case "REMOVE_FROM_CART": {
       // first we find index of the item we clicked for delete from cart
       const index = state.cart.findIndex(
         (cartItem) => cartItem.id === action.id
@@ -34,7 +34,7 @@ const reducer = (state, action) => {
         ...state,
         cart: newCart,
       };
-
+    }
     case "EMPTY_CART":
       return {
         ...state,

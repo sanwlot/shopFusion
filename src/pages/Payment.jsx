@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { Link, useNavigate } from "react-router-dom";
