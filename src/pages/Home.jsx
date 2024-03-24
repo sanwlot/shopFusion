@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
 import Carousel from "../components/Carousel";
+import { useStateValue } from "../StateProvider";
 import "./Home.css";
 
-export default function Home({ userInputProduct }) {
+export default function Home() {
+  const [{ userInputProductSearch }, dispatch] = useStateValue();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,7 +15,9 @@ export default function Home({ userInputProduct }) {
   }, []);
 
   const productsSearchedByUser = products.filter((product) => {
-    return product.title.toLowerCase().includes(userInputProduct.toLowerCase());
+    return product.title
+      .toLowerCase()
+      .includes(userInputProductSearch.toLowerCase());
   });
 
   const moreProductsEl = productsSearchedByUser.map((product) => {
@@ -32,7 +36,7 @@ export default function Home({ userInputProduct }) {
   return (
     <div className="home">
       <div className="home__container">
-        {userInputProduct.length === 0 && (
+        {userInputProductSearch.length === 0 && (
           <>
             <Carousel />
             <div className="home__row">

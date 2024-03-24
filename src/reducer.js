@@ -1,6 +1,7 @@
 export const initialState = {
   cart: [],
   user: null,
+  userInputProductSearch: "",
 };
 
 export default function reducer(state, action) {
@@ -41,6 +42,12 @@ export default function reducer(state, action) {
         cart: [],
       };
 
+    case "SET_USER_INPUT_PRODUCT_SEARCH":
+      return {
+        ...state,
+        userInputProductSearch: action.payload,
+      };
+
     case "SET_USER":
       return {
         ...state,
@@ -50,7 +57,3 @@ export default function reducer(state, action) {
       return state;
   }
 }
-
-// utility functions
-export const getCartTotal = (cart) =>
-  cart?.reduce((accumulator, currentVal) => currentVal.price + accumulator, 0);

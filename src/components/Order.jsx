@@ -1,12 +1,13 @@
 import moment from "moment";
 import CheckoutProduct from "./CheckoutProduct";
+import { v4 as uuidv4 } from "uuid";
 import "./Order.css";
 
 export default function Order({ order }) {
   const CheckoutProducts = order.cart.map((item) => {
     return (
       <CheckoutProduct
-        key={Math.random()}
+        key={uuidv4()}
         id={item.id}
         price={item.price}
         rating={item.rating}

@@ -14,7 +14,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   // handle sign in
-  const signin = (e) => {
+  function signin(e) {
     e.preventDefault();
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -25,7 +25,7 @@ export default function Login() {
         }
       })
       .catch((error) => alert(error.message));
-  };
+  }
 
   // handle registering a new user
   const register = () => {

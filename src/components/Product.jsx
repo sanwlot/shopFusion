@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from "uuid";
-import "./Product.css";
 import { useStateValue } from "../StateProvider";
+import Ratings from "./Ratings";
+import "./Product.css";
 
 export default function Product({ id, title, price, image, rating }) {
   const [{ cart }, dispatch] = useStateValue();
@@ -19,10 +19,6 @@ export default function Product({ id, title, price, image, rating }) {
     });
   };
 
-  const ratings = Array(Math.ceil(rating))
-    .fill()
-    .map(() => <p key={uuidv4()}>⭐️</p>);
-
   return (
     <div className="product">
       <div className="product__info">
@@ -31,7 +27,7 @@ export default function Product({ id, title, price, image, rating }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product__rating">{ratings}</div>
+        <Ratings rating={rating} />
       </div>
 
       <img src={image} alt="product" />

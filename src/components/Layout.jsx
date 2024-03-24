@@ -5,10 +5,10 @@ import Header from "./Header";
 // for example header and footer
 // <Outlet /> is used for displaying all the children components in between <Layout />
 
-export default function Layout({ setUserInputProduct }) {
+export default function Layout() {
   return (
     <>
-      <Header setUserInputProduct={setUserInputProduct} />
+      <Header />
       <Outlet />
     </>
   );

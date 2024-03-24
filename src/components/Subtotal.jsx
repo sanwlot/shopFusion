@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
-import { getCartTotal } from "../reducer";
+import { getCartTotal } from "../utilityFunctions";
 import "./Subtotal.css";
 
 export default function Subtotal() {

@@ -1,8 +1,9 @@
-import "./Checkout.css";
 import { useStateValue } from "../StateProvider";
-import Subtotal from "../components/Subtotal";
 import CheckoutProduct from "../components/CheckoutProduct";
+import Subtotal from "../components/Subtotal";
 import { v4 as uuidv4 } from "uuid";
+import { getUserName } from "../utilityFunctions";
+import "./Checkout.css";
 
 export default function Checkout() {
   const [{ cart, user }] = useStateValue();
@@ -24,9 +25,7 @@ export default function Checkout() {
     <div className="checkout">
       <div className="checkout__left">
         <div style={{ padding: "2em" }}>
-          <h3 style={{ marginLeft: "0.5em" }}>
-            Hello {user?.email.split("@")[0].toUpperCase()}
-          </h3>
+          <h3 style={{ marginLeft: "0.5em" }}>Hello {getUserName(user)}</h3>
           <h2 className="checkout__title">Your Shopping Cart</h2>
           {CheckoutProducts}
         </div>

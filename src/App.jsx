@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
@@ -19,10 +19,10 @@ const stripePromise = loadStripe(
 );
 
 export default function App() {
-  // React Context API, here using dispatch for adding values to the state
+  // for dispatching user login status to the data layer
   const [{}, dispatch] = useStateValue();
 
-  // Authentication for user login status
+  // checking user login status
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -42,20 +42,12 @@ export default function App() {
     });
   }, []);
 
-  // a state variable for tracking what user types in the product search input in the home page
-  // variable is used by <Home /> component
-  // setter function is used by <Header /> component, which is inside <Layout />
-  const [userInputProduct, setUserInputProduct] = useState("");
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route element={<Layout setUserInputProduct={setUserInputProduct} />}>
-          <Route
-            path="/"
-            element={<Home userInputProduct={userInputProduct} />}
-          />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/payment"

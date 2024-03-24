@@ -3,13 +3,13 @@ import { getAuth, signOut } from "firebase/auth";
 import { useStateValue } from "../StateProvider";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
+import { getUserName } from "../utilityFunctions";
 import "./Header.css";
 
-export default function Header({ setUserInputProduct }) {
-  const [{ cart, user }] = useStateValue();
+export default function Header() {
+  const [{ cart, user }, dispatch] = useStateValue();
 
-  // sign out logic
-  const handleSignOut = () => {
+  function handleSignOut() {
     const auth = getAuth();
     if (user) {
       signOut(auth)
@@ -20,20 +20,8 @@ export default function Header({ setUserInputProduct }) {
           alert(error);
         });
     }
-  };
-
-  // parsing username from their email if they're logged in
-  let username = user?.email.split("@")[0];
-
-  // capitalizing their username if they're logged in
-  if (user) {
-    username = username.charAt(0).toUpperCase() + username.slice(1);
   }
 
-  //if user is not logged in then set it to Guest, else their username
-  let displayName = user ? username : "Guest";
-
-  // user sign-in status
   let signInStatus = user ? "Sign Out" : "Sign In";
 
   return (
@@ -50,15 +38,23 @@ export default function Header({ setUserInputProduct }) {
         <input
           className="header__search-input"
           type="text"
-          onChange={(e) => setUserInputProduct(e.target.value)}
+          onChange={(e) =>
+            dispatch({
+              type: "SET_USER_INPUT_PRODUCT_SEARCH",
+              payload: e.target.value,
+            })
+          }
         />
         <SearchIcon className="header__search-icon" />
       </div>
 
       <div className="header__nav">
+        {/* if user is not logged-in then link will take user to the login page */}
         <Link to={!user && "/login"}>
           <div onClick={handleSignOut} className="header__option">
-            <span className="header__option-line-one">Hello {displayName}</span>
+            <span className="header__option-line-one">
+              Hello {getUserName(user)}
+            </span>
             <span className="header__option-line-two">{signInStatus}</span>
           </div>
         </Link>
@@ -71,11 +67,6 @@ export default function Header({ setUserInputProduct }) {
             </div>
           </Link>
         )}
-
-        <div className="header__option">
-          <span className="header__option-line-one">Your</span>
-          <span className="header__option-line-two">Prime</span>
-        </div>
       </div>
 
       {user && cart.length > 0 && (

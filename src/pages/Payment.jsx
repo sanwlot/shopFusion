@@ -3,7 +3,7 @@ import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { Link, useNavigate } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import { getCartTotal } from "../reducer";
+import { getCartTotal } from "../utilityFunctions";
 import axios from "../axios";
 import { db } from "../firebase";
 import { collection, doc, setDoc } from "firebase/firestore";
