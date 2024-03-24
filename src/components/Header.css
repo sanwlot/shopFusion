@@ -1,24 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 .header {
-  height: 60px;
+  height: 90px;
   display: flex;
   align-items: center;
-  background-color: #131921;
+
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.header__logo {
-  width: 100px;
-  object-fit: contain;
-  margin: 0 20px;
-  margin-top: 18px;
+.logo-container {
+  color: black;
+  margin: 20px;
+  font-size: 1.7em;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .header__search-icon {
   padding: 5px;
-  height: 22px !important;
-  background-color: #cd9042;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .header__search {
@@ -29,19 +35,23 @@
 }
 
 .header__search-input {
-  height: 12px;
+  height: 20px;
   padding: 10px;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.44);
   width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .header__nav {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 .header__option {
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   margin-left: 10px;
@@ -49,20 +59,26 @@
 }
 
 .header__option-line-one {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .header__option-line-two {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
 }
 
 .header__option-cart {
-  color: white;
+  color: black;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  margin-right: 20px;
 }
 
 .header__cart-count {
   margin: 0 10px;
+}
+
+.header__option-cart-icon {
+  /* font-size: 25px; */
 }

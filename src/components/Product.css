@@ -10,6 +10,8 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .product > img {
@@ -20,11 +22,18 @@
 }
 
 .product > button {
-  background-color: #f0c14b;
-  border: 1px solid;
-  margin-top: 10px;
-  border-color: #a88734 #9c7e31 #846a29;
-  color: #111;
+  background-color: black;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-weight: bold;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: teal;
+  }
 }
 
 .product__price {

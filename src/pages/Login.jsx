@@ -43,11 +43,7 @@ export default function Login() {
   return (
     <div className="login">
       <Link to="/">
-        <img
-          className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
-          alt="logo"
-        />
+        <div className="login__logo-container">Shop Fusion</div>
       </Link>
 
       <div className="login__container">
@@ -74,12 +70,12 @@ export default function Login() {
         </form>
 
         <p>
-          By signing-in you agree to the AMAZON CLONE Conditions of use & sale.
+          By signing-in you agree to the Shop Fusion Conditions of use & sale.
           Please see our privacy notice, our cookies notice and our interest
           baesed ads notice.
         </p>
         <button className="login__register-btn" onClick={register}>
-          Create your Amazon account
+          Sign Up
         </button>
       </div>
     </div>

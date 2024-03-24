@@ -14,9 +14,6 @@ export default function Subtotal() {
       <p>
         Subtotal ({cart.length} items): <strong>{price}</strong>
       </p>
-      <small className="subtotal__gift">
-        <input type="checkbox" /> This order contains a gift
-      </small>
       <button onClick={() => navigate("/payment")} className="hoverEffect">
         Proceed to Checkout
       </button>

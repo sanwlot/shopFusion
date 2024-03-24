@@ -20,7 +20,7 @@ export default function Order({ order }) {
 
   return (
     <div className="order">
-      <h2>Order</h2>
+      <h2 className="order-h2">Order</h2>
       <p>{moment.unix(order.created).format("MMMM Do YYYY, h:mm")}</p>
       <p className="order__id">
         <small>{order.id}</small>

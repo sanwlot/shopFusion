@@ -27,11 +27,7 @@ export default function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img
-          className="header__logo"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="amazon logo"
-        />
+        <div className="logo-container">Shop fusion</div>
       </Link>
 
       <div className="header__search">
@@ -72,10 +68,10 @@ export default function Header() {
       {user && cart.length > 0 && (
         <Link to="/checkout">
           <div className="header__option-cart">
-            <ShoppingCartIcon className="header__option-cart-icon" />
             <span className="header__option-line-two header__cart-count">
               {cart?.length}
             </span>
+            <ShoppingCartIcon className="header__option-cart-icon" />
           </div>
         </Link>
       )}
