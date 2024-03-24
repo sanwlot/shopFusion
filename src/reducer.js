@@ -3,7 +3,7 @@ export const initialState = {
   user: null,
 };
 
-const reducer = (state, action) => {
+export default function reducer(state, action) {
   switch (action.type) {
     case "ADD_TO_CART":
       return {
@@ -49,9 +49,8 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-};
+}
 
+// utility functions
 export const getCartTotal = (cart) =>
   cart?.reduce((accumulator, currentVal) => currentVal.price + accumulator, 0);
-
-export default reducer;
