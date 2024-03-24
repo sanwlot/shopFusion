@@ -3,19 +3,16 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBPzoVz0VC5j37JzJOZIFxxrcCD2LovpCg",
-  authDomain: "clone-f0b5b.firebaseapp.com",
-  projectId: "clone-f0b5b",
-  storageBucket: "clone-f0b5b.appspot.com",
-  messagingSenderId: "140382565990",
-  appId: "1:140382565990:web:7c088fa605d7e15742dfa7",
-  measurementId: "G-WF5GPHZSLK",
+  apiKey: "AIzaSyA13MD5auIxWl4UuBGq-CxRwIDGj-GnF3Q",
+  authDomain: "shop-fusion-react.firebaseapp.com",
+  projectId: "shop-fusion-react",
+  storageBucket: "shop-fusion-react.appspot.com",
+  messagingSenderId: "1010136425930",
+  appId: "1:1010136425930:web:9f282d9a8c6419fd199b33",
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
 export { db, auth };
