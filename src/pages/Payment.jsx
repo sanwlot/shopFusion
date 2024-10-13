@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import { useStateValue } from "../StateProvider";
-import CheckoutProduct from "../components/CheckoutProduct";
-import { Link, useNavigate } from "react-router-dom";
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import { getCartTotal } from "../utilityFunctions";
-import axios from "../axios";
-import { db } from "../firebase";
-import { collection, doc, setDoc } from "firebase/firestore";
-import { v4 as uuidv4 } from "uuid";
-import "./Payment.css";
+import { useEffect, useState } from "react"
+import { useStateValue } from "../StateProvider"
+import CheckoutProduct from "../components/CheckoutProduct"
+import { Link, useNavigate } from "react-router-dom"
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
+import { getCartTotal } from "../utilityFunctions"
+import axios from "../axios"
+import { db } from "../firebase"
+import { collection, doc, setDoc } from "firebase/firestore"
+import { v4 as uuidv4 } from "uuid"
+import "./Payment.css"
 
 export default function Payment() {
-  const stripe = useStripe();
-  const elements = useElements();
+  const stripe = useStripe()
+  const elements = useElements()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue()
 
-  const [succeeded, setSucceeded] = useState(false);
-  const [processing, setProcessing] = useState("");
-  const [error, setError] = useState(null);
-  const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState(true);
+  const [succeeded, setSucceeded] = useState(false)
+  const [processing, setProcessing] = useState("")
+  const [error, setError] = useState(null)
+  const [disabled, setDisabled] = useState(true)
+  const [clientSecret, setClientSecret] = useState(true)
 
   useEffect(() => {
     // generate the special stripe secret which allows us to charge a customer
@@ -31,17 +31,17 @@ export default function Payment() {
         method: "post",
         // Stripe expects the total in a currencies subunits
         url: `/payments/create?total=${getCartTotal(cart) * 100}`,
-      });
-      setClientSecret(response.data.clientSecret);
-    };
+      })
+      setClientSecret(response.data.clientSecret)
+    }
 
-    getClientSecret();
-  }, [cart]);
+    getClientSecret()
+  }, [cart])
 
   async function handleSubmit(e) {
     // Stripe logic
-    e.preventDefault();
-    setProcessing(true);
+    e.preventDefault()
+    setProcessing(true)
 
     await stripe
       .confirmCardPayment(clientSecret, {
@@ -53,51 +53,51 @@ export default function Payment() {
         // paymentIntent = payment confirmation
 
         // pushing purchase details to firestore
-        const userDocId = user?.uid;
-        const orderId = paymentIntent.id;
+        const userDocId = user?.uid
+        const orderId = paymentIntent.id
 
         if (userDocId && orderId) {
-          const usersCollection = collection(db, "users");
-          const userDocRef = doc(usersCollection, userDocId);
+          const usersCollection = collection(db, "users")
+          const userDocRef = doc(usersCollection, userDocId)
 
-          const userOrdersCollection = collection(userDocRef, "orders");
-          const orderDocRef = doc(userOrdersCollection, orderId);
+          const userOrdersCollection = collection(userDocRef, "orders")
+          const orderDocRef = doc(userOrdersCollection, orderId)
 
           const orderData = {
             cart: cart,
             amount: paymentIntent.amount,
             created: paymentIntent.created,
-          };
+          }
 
           setDoc(orderDocRef, orderData)
             .then(() => {
-              console.log("Order document written successfully!");
+              console.log("Order document written successfully!")
             })
             .catch((error) => {
-              console.error("Error writing order document: ", error);
-            });
+              console.error("Error writing order document: ", error)
+            })
         } else {
-          console.error("User ID or Order ID is undefined.");
+          console.error("User ID or Order ID is undefined.")
         }
 
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
+        setSucceeded(true)
+        setError(null)
+        setProcessing(false)
 
         dispatch({
           type: "EMPTY_CART",
-        });
+        })
 
-        navigate("/orders", { replace: true });
-      });
+        navigate("/orders", { replace: true })
+      })
   }
 
   function handleChange(e) {
-    setDisabled(e.empty);
-    setError(e.error ? e.error.message : "");
+    setDisabled(e.empty)
+    setError(e.error ? e.error.message : "")
   }
 
-  const price = getCartTotal(cart) > 0 ? `$${getCartTotal(cart)}` : 0;
+  const price = getCartTotal(cart) > 0 ? `$${getCartTotal(cart)}` : 0
 
   return (
     <div className="payment">
@@ -182,5 +182,5 @@ export default function Payment() {
         </div>
       </div>
     </div>
-  );
+  )
 }
