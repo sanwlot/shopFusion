@@ -1,18 +1,24 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth"
+import { getFirestore } from "firebase/firestore"
+const apiKey = import.meta.env.VITE_API_KEY
+const authDomain = import.meta.env.VITE_AUTH_DOMAIN
+const projectId = import.meta.env.VITE_PROJECT_ID
+const storageBucket = import.meta.env.VITE_STORAGE_BUCKET
+const messagingSenderId = import.meta.env.VITE_MESSAGING_SENDER_ID
+const appId = import.meta.env.VITE_APP_ID
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA13MD5auIxWl4UuBGq-CxRwIDGj-GnF3Q",
-  authDomain: "shop-fusion-react.firebaseapp.com",
-  projectId: "shop-fusion-react",
-  storageBucket: "shop-fusion-react.appspot.com",
-  messagingSenderId: "1010136425930",
-  appId: "1:1010136425930:web:9f282d9a8c6419fd199b33",
-};
+  apiKey,
+  authDomain,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
+}
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+const auth = getAuth(app)
 
-export { db, auth };
+export { db, auth }
