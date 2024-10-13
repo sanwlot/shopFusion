@@ -10,7 +10,7 @@ import Checkout from "./pages/Checkout"
 import Payment from "./pages/Payment"
 import Orders from "./pages/Orders"
 import Layout from "./components/Layout"
-const appId = import.meta.env.VITE_STRIPE_PK
+const VITE_STRIPE_PK = import.meta.env.VITE_STRIPE_PK
 
 // Loading Stripe with publishable key
 // Make sure to call `loadStripe` outside of a component’s render to avoid

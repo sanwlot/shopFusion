@@ -13924,3 +13924,214 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2024-03-24T15:37:10.530Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
 [debug] [2024-03-24T15:37:10.531Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
 [debug] [2024-03-24T15:37:10.531Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-10-13T13:15:20.045Z] ----------------------------------------------------------------------
+[debug] [2024-10-13T13:15:20.052Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2024-10-13T13:15:20.053Z] CLI Version:   13.5.2
+[debug] [2024-10-13T13:15:20.053Z] Platform:      darwin
+[debug] [2024-10-13T13:15:20.053Z] Node Version:  v20.11.1
+[debug] [2024-10-13T13:15:20.053Z] Time:          Sun Oct 13 2024 18:45:20 GMT+0530 (India Standard Time)
+[debug] [2024-10-13T13:15:20.053Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-13T13:15:20.055Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-10-13T13:15:20.155Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-13T13:15:20.155Z] > authorizing via signed-in user (sunny.savlot@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2024-10-13T13:15:20.396Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2024-10-13T13:15:20.397Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-10-13T13:15:20.397Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-10-13T13:15:20.403Z] [hub] writing locator at /var/folders/t5/41w0mv413gqgm8tzw9v6swcm0000gn/T/hub-shop-fusion-react.json
+[debug] [2024-10-13T13:15:20.518Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-10-13T13:15:20.518Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-10-13T13:15:20.519Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2024-10-13T13:15:20.523Z] defaultcredentials: writing to file /Users/ajaysanwlot/.config/firebase/sunny_savlot_gmail.com_application_default_credentials.json
+[debug] [2024-10-13T13:15:20.529Z] Setting GAC to /Users/ajaysanwlot/.config/firebase/sunny_savlot_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ajaysanwlot/.config/firebase/sunny_savlot_gmail.com_application_default_credentials.json"}}
+[debug] [2024-10-13T13:15:20.530Z] > refreshing access token with scopes: []
+[debug] [2024-10-13T13:15:20.530Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-13T13:15:20.530Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:20.804Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-13T13:15:20.804Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:20.804Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/adminSdkConfig [none]
+[debug] [2024-10-13T13:15:21.119Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/adminSdkConfig 401
+[debug] [2024-10-13T13:15:21.119Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/adminSdkConfig {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-10-13T13:15:21.120Z] Failed to get Admin SDK config for shop-fusion-react, falling back to cache Failed to get Admin SDK for Firebase project shop-fusion-react. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project shop-fusion-react. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}},"response":{"statusCode":401}},"exit":1,"message":"HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":401},"status":500}
+[debug] [2024-10-13T13:15:21.125Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-10-13T13:15:21.125Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-10-13T13:15:21.155Z] > refreshing access token with scopes: []
+[debug] [2024-10-13T13:15:21.155Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-13T13:15:21.156Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:21.284Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-13T13:15:21.284Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:21.285Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/shop-fusion-react/sites 
+[debug] [2024-10-13T13:15:22.425Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/shop-fusion-react/sites 401
+[debug] [2024-10-13T13:15:22.425Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/shop-fusion-react/sites {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-10-13T13:15:22.426Z] Failed to list hosting sites
+[debug] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-10-13T13:15:22.426Z] > refreshing access token with scopes: []
+[debug] [2024-10-13T13:15:22.427Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-13T13:15:22.427Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:22.545Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-13T13:15:22.545Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:22.545Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/webApps/-/config [none]
+[debug] [2024-10-13T13:15:22.931Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/webApps/-/config 401
+[debug] [2024-10-13T13:15:22.932Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react/webApps/-/config {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-10-13T13:15:22.932Z] fetchWebSetup error: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[warn] ⚠  hosting: Using web app configuration from cache. 
+[debug] [2024-10-13T13:15:22.934Z] > refreshing access token with scopes: []
+[debug] [2024-10-13T13:15:22.935Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-13T13:15:22.935Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:23.055Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-13T13:15:23.055Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-13T13:15:23.056Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react [none]
+[debug] [2024-10-13T13:15:23.200Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react 401
+[debug] [2024-10-13T13:15:23.201Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shop-fusion-react {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-10-13T13:15:23.201Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[info] i  hosting[shop-fusion-react]: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] ✔  hosting[shop-fusion-react]: Local server: http://127.0.0.1:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5002\u001b[22m\u001b[24m"}}
+[debug] [2024-10-13T13:15:23.257Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-10-13T13:15:23.257Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-10-13T13:15:23.257Z] Starting Emulator UI with command {"binary":"node","args":["/Users/ajaysanwlot/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/ajaysanwlot/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-10-13T13:15:23.369Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-10-13T13:15:23.369Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/ajaysanwlot/coding/shopFusion/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/ajaysanwlot/coding/shopFusion/functions\" for Cloud Functions..."}}
+[debug] [2024-10-13T13:15:23.519Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-10-13T13:15:24.111Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^14.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-10-13T13:15:24.111Z] Building nodejs source
+[debug] [2024-10-13T13:15:24.111Z] Failed to find version of module node: reached end of search path /Users/ajaysanwlot/coding/shopFusion/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-10-13T13:15:24.113Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-10-13T13:15:24.117Z] Found firebase-functions binary at '/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8834
+
+[debug] [2024-10-13T13:15:25.045Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] ✔  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/shop-fusion-react/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/shop-fusion-react/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5002 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-10-13T13:16:18.872Z] File /Users/ajaysanwlot/coding/shopFusion/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/ajaysanwlot/coding/shopFusion/functions/index.js changed, reloading triggers"}}
+[debug] [2024-10-13T13:16:19.876Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-10-13T13:16:20.415Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^14.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-10-13T13:16:20.415Z] Building nodejs source
+[debug] [2024-10-13T13:16:20.415Z] Failed to find version of module node: reached end of search path /Users/ajaysanwlot/coding/shopFusion/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-10-13T13:16:20.416Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-10-13T13:16:20.418Z] Found firebase-functions binary at '/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8173
+
+[debug] [2024-10-13T13:16:20.826Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2024-10-13T13:18:07.915Z] [work-queue] {"queuedWork":["/shop-fusion-react/us-central1/api/payments/create-2024-10-13T13:18:07.914Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-10-13T13:18:07.917Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/shop-fusion-react/us-central1/api/payments/create-2024-10-13T13:18:07.914Z"],"workRunningCount":1}
+[debug] [2024-10-13T13:18:07.918Z] Accepted request POST /shop-fusion-react/us-central1/api/payments/create?total=59899 --> us-central1-api
+[debug] [2024-10-13T13:18:07.942Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-10-13T13:18:07.943Z] [functions] Got req.url=/shop-fusion-react/us-central1/api/payments/create?total=59899, mapping to path=/payments/create?total=59899 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/shop-fusion-react/us-central1/api/payments/create?total=59899, mapping to path=/payments/create?total=59899"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-10-13T13:18:07.951Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2024-10-13T13:18:07.952Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2024-10-13T13:18:09.012Z] [runtime-status] [37542] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.013Z] [runtime-status] [37542] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.013Z] [runtime-status] [37542] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-10-13T13:18:09.014Z] [runtime-status] [37542] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.219Z] [runtime-status] [37542] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-10-13T13:18:09.219Z] [runtime-status] [37542] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2024-10-13T13:18:09.219Z] [runtime-status] [37542] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.220Z] [runtime-status] [37542] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.222Z] [runtime-status] [37542] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-10-13T13:18:09.222Z] [runtime-status] [37542] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/ajaysanwlot/coding/shopFusion/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2024-10-13T13:18:09.416Z] [runtime-status] [37542] Functions runtime initialized. {"cwd":"/Users/ajaysanwlot/coding/shopFusion/functions","node_version":"20.11.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Functions runtime initialized. {\"cwd\":\"/Users/ajaysanwlot/coding/shopFusion/functions\",\"node_version\":\"20.11.1\"}"}}
+[debug] [2024-10-13T13:18:09.417Z] [runtime-status] [37542] Listening to port: /var/folders/t5/41w0mv413gqgm8tzw9v6swcm0000gn/T/fire_emu_839ad5b3bfe32a28.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [37542] Listening to port: /var/folders/t5/41w0mv413gqgm8tzw9v6swcm0000gn/T/fire_emu_839ad5b3bfe32a28.sock"}}
+[debug] [2024-10-13T13:18:09.485Z] [worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: IDLE"}}
+[debug] [2024-10-13T13:18:09.485Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-10-13T13:18:09.486Z] [worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: BUSY"}}
+[info] >  Payment request received!!!  59899 {"user":"Payment request received!!!  59899","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Payment request received!!!  59899"}}
+[debug] [2024-10-13T13:18:10.250Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 764.405708ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 764.405708ms"}}
+[debug] [2024-10-13T13:18:10.251Z] [worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-40671190-fa7c-41b9-9ea8-ba85b2f591b6]: IDLE"}}
+[debug] [2024-10-13T13:18:10.251Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-10-13T13:18:10.251Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-10-13T13:18:10.251Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
